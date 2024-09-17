@@ -3,7 +3,7 @@ import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 
 const MainScreen = () => {
   return (
-    <View className="flex-1 bg-background">
+    <View className="flex-1 items-center bg-background">
       {/* Header */}
       <View className="p-6 bg-primary">
         <Text className="text-2xl font-bold text-background">Startseite</Text>
