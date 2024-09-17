@@ -1,12 +1,24 @@
-import { Text, View } from "react-native";
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import MainScreen from '@/screens/MainScreen';
 import '@/styles/tailwind.css';
 
-export default function Index() {
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <View className="w-full flex-1 items-center justify-center bg-white">
-    <Text className="text-xl font-bold text-blue-500">
-            Hello, Tailwind CSS!
-          </Text>
-    </View>
+    <NavigationContainer independent={true}>
+      <Stack.Navigator initialRouteName="Main">
+        <Stack.Screen 
+          name="Main" 
+          component={MainScreen} 
+          options={{ headerShown: false }}
+        />
+        {/* Add other screens here */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
+
+export default App;
